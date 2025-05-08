@@ -102,6 +102,24 @@ namespace tallerMecanico
 
 
         //ELIMINAR CLIENTE
+
+        private bool clienteVehiculo(int idCliente)
+        {
+            using (MySqlConnection conector = new MySqlConnection(conexion))
+            {
+                conector.Open();
+                string query = "SELECT COUNT(*) FROM vehiculos WHERE fkCliente = @id;";
+                using (MySqlCommand comando = new MySqlCommand(query, conector))
+                {
+                    comando.Parameters.AddWithValue("@id", idCliente);
+                    int cantidad = Convert.ToInt32(comando.ExecuteScalar());
+                    return cantidad > 0;
+                }
+            }
+        }
+
+
+
         private void eliminarCliente()
         {
             try
@@ -110,27 +128,36 @@ namespace tallerMecanico
                 {
                     //Obtiene el id a eliminar:
                     int id = Convert.ToInt32(gridClientes.SelectedRows[0].Cells["idCliente"].Value);
-                    DialogResult c = MessageBox.Show("¿Estas seguro?", "Eliminar reservación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    DialogResult c = MessageBox.Show("¿Estas seguro?", "Eliminar cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (c == DialogResult.Yes)
                     {
-                        using (MySqlConnection conector = new MySqlConnection(conexion))
+                        //Validar si el cliente no contiene vehiculos a su nombre
+                        if(clienteVehiculo(id))
                         {
-                            conector.Open();
-                            string query = "DELETE FROM clientes WHERE idCliente = @id";
-                            using (MySqlCommand comando = new MySqlCommand(query, conector))
+                            MessageBox.Show("No se puede eliminar este cliente porque tiene vehículos registrados.", "Operacion Inválida");
+                            return;
+                        }
+                        else
+                        { 
+                            using (MySqlConnection conector = new MySqlConnection(conexion))
                             {
-                                comando.Parameters.AddWithValue("@id", id);
-                                comando.ExecuteNonQuery();
+                                conector.Open();
+                                string query = "DELETE FROM clientes WHERE idCliente = @id";
+                                using (MySqlCommand comando = new MySqlCommand(query, conector))
+                                {
+                                    comando.Parameters.AddWithValue("@id", id);
+                                    comando.ExecuteNonQuery();
+                                }
+                                MessageBox.Show("Cliente eliminado");
+                                mostrarClientes();
                             }
-                            MessageBox.Show("Reservación cancelada");
-                            mostrarClientes();
                         }
                     }
 
                 }
                 else
                 {
-                    MessageBox.Show("Selecciona el cliente a eliminar");
+                    MessageBox.Show("Selecciona el cliente a eliminar","Atención");
                 }
             }
             catch (Exception e)

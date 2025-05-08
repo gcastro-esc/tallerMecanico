@@ -34,3 +34,4 @@ C:\Users\Docente\Desktop\winForms GC\tallerMecanico\tallerMecanico\bin\Debug\net
 C:\Users\Docente\Desktop\winForms GC\tallerMecanico\tallerMecanico\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 C:\Users\Docente\Desktop\winForms GC\tallerMecanico\tallerMecanico\obj\Debug\net8.0-windows\tallerMecanico.csproj.AssemblyReference.cache
 C:\Users\Docente\Desktop\winForms GC\tallerMecanico\tallerMecanico\obj\Debug\net8.0-windows\tallerMe.70F871B3.Up2Date
+C:\Users\Docente\Desktop\winForms GC\tallerMecanico\tallerMecanico\obj\Debug\net8.0-windows\tallerMecanico.sourcelink.json

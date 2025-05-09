@@ -225,6 +225,7 @@
             btnAgregar.Text = " ";
             btnAgregar.TextAlign = ContentAlignment.MiddleLeft;
             btnAgregar.UseVisualStyleBackColor = false;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // btnModificar
             // 

@@ -67,21 +67,51 @@ namespace tallerMecanico
                 using (MySqlConnection conector = new MySqlConnection(conexion))
                 {
                     conector.Open();
-                    string query = "SELECT * FROM clientes";
-                    MySqlCommand comando = new MySqlCommand(query, conector);
-                    MySqlDataReader leer = comando.ExecuteReader();
-                    comboCliente.Items.Clear();
-                    while (leer.Read())
-                    {
-                        comboCliente.Items.Add(leer["nombre"].ToString());
-                    }
+                    string query = "SELECT idCliente, nombre FROM clientes";
+                    MySqlDataAdapter comando = new MySqlDataAdapter(query, conector);
+                    DataTable clientes = new DataTable();
+                    comando.Fill(clientes);
+                    comboCliente.DataSource = clientes;
+                    comboCliente.DisplayMember = "nombre";
+                    comboCliente.ValueMember = "idCliente";
                 }
             }
             catch (Exception e)
             {
-
+                MessageBox.Show("Error al cargar los datos del cliente: " + e.Message);
             }
         }
 
+        private void nuevoVehiculo()
+        {
+            try
+            {
+                using (MySqlConnection conector = new MySqlConnection(conexion))
+                {
+                    conector.Open();
+                    string query = "INSERT INTO vehiculos (fkCliente, marca, modelo, placas, year) VALUES (@fk, @ma, @mo, @pl, @ye); ";
+                    using (MySqlCommand comando = new MySqlCommand(query, conector))
+                    {
+                        comando.Parameters.AddWithValue("@fk", comboCliente.SelectedValue);
+                        comando.Parameters.AddWithValue("@ma", txtMarca.Text);
+                        comando.Parameters.AddWithValue("@mo", txtModelo.Text);
+                        comando.Parameters.AddWithValue("@pl", txtPlacas.Text);
+                        comando.Parameters.AddWithValue("@ye", txtYear.Text);
+                        comando.ExecuteNonQuery();
+                        MessageBox.Show("Vehiculo agregado!");
+                        mostrarVehiculos();
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("Error al guardar el vehiculo: " + e.Message);
+            }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            nuevoVehiculo();
+        }
     }
 }

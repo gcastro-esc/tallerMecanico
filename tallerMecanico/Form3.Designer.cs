@@ -240,6 +240,7 @@
             btnModificar.Text = " ";
             btnModificar.TextAlign = ContentAlignment.MiddleLeft;
             btnModificar.UseVisualStyleBackColor = false;
+            btnModificar.Click += btnModificar_Click;
             // 
             // txtMarca
             // 
@@ -291,6 +292,7 @@
             gridVehiculos.Name = "gridVehiculos";
             gridVehiculos.Size = new Size(717, 165);
             gridVehiculos.TabIndex = 4;
+            gridVehiculos.CellClick += gridVehiculos_CellClick;
             // 
             // frmVehiculos
             // 

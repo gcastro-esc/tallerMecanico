@@ -187,5 +187,73 @@ namespace tallerMecanico
         {
             eliminarCliente();
         }
+
+        //ACTUALIZAR VEHICULO
+
+        private int vehiculoSeleccionado = -1;
+        private void gridVehiculos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow fila = gridVehiculos.Rows[e.RowIndex];
+                vehiculoSeleccionado = Convert.ToInt32(fila.Cells["idVehiculo"].Value);
+                txtMarca.Text = fila.Cells["marca"].Value.ToString();
+                txtModelo.Text = fila.Cells["modelo"].Value.ToString();
+                txtPlacas.Text = fila.Cells["placas"].Value.ToString();
+                txtYear.Text = fila.Cells["year"].Value.ToString();
+                comboCliente.SelectedValue = Convert.ToInt32(fila.Cells["fkCliente"].Value);
+            }
+        }
+
+        private void actualizarVehiculo()
+        {
+            try
+            {
+                if (vehiculoSeleccionado != -1)
+                {
+                    int id = Convert.ToInt32(gridVehiculos.SelectedRows[0].Cells["idVehiculo"].Value);
+                    using (MySqlConnection conector = new MySqlConnection(conexion))
+                    {
+                        conector.Open();
+                        string query = "UPDATE vehiculos SET fkCliente = @fk, marca = @ma, modelo = @mo, placas = @pl, year = @ye WHERE idVehiculo = @id; ";
+                        using (MySqlCommand comando = new MySqlCommand(query,conector))
+                        {
+                            comando.Parameters.AddWithValue("@fk", comboCliente.SelectedValue);
+                            comando.Parameters.AddWithValue("@ma", txtMarca.Text);
+                            comando.Parameters.AddWithValue("@mo", txtModelo.Text);
+                            comando.Parameters.AddWithValue("@pl", txtPlacas.Text);
+                            comando.Parameters.AddWithValue("@ye", txtYear.Text);
+                            comando.Parameters.AddWithValue("@id", id);
+                            int actualizacion = comando.ExecuteNonQuery();
+                            if (actualizacion > 0)
+                            {
+                                MessageBox.Show("Datos del vehiculo actualizado");
+                                mostrarVehiculos();
+                                txtMarca.Clear();
+                                txtModelo.Clear();
+                                txtPlacas.Clear();
+                                txtYear.Clear();
+                                comboCliente.SelectedIndex = -1;
+                                vehiculoSeleccionado = -1;
+                            }
+                            else
+                            {
+                                MessageBox.Show("No fue posible actualizar los datos...");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error al actualizar vehiculo: " + e.Message);
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            actualizarVehiculo();
+        }
+
     }
 }

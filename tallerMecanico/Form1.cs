@@ -12,5 +12,11 @@ namespace tallerMecanico
             frmClientes objeto = new frmClientes();
             objeto.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmVehiculos objeto = new frmVehiculos();
+            objeto.Show();
+        }
     }
 }

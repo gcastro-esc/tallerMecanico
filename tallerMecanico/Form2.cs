@@ -55,6 +55,7 @@ namespace tallerMecanico
         private void frmClientes_Load(object sender, EventArgs e)
         {
             mostrarClientes();
+            gridClientes.Left = (this.ClientSize.Width - gridClientes.Width) / 2;
         }
 
         //AGREGAR CLIENTE
@@ -117,8 +118,6 @@ namespace tallerMecanico
                 }
             }
         }
-
-
 
         private void eliminarCliente()
         {

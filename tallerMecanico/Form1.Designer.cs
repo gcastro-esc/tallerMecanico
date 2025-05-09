@@ -106,6 +106,7 @@
             button2.Text = " ";
             button2.TextAlign = ContentAlignment.MiddleLeft;
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // label2
             // 

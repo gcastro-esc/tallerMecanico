@@ -188,6 +188,7 @@
             btnEliminar.Text = " ";
             btnEliminar.TextAlign = ContentAlignment.MiddleLeft;
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // label7
             // 

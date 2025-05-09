@@ -103,7 +103,7 @@ namespace tallerMecanico
                     }
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show("Error al guardar el vehiculo: " + e.Message);
             }
@@ -111,7 +111,81 @@ namespace tallerMecanico
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            nuevoVehiculo();
+            if (comboCliente.SelectedIndex <= 0)
+            {
+                MessageBox.Show("Selecciona el propietario del vehiculo");
+            }
+            else
+            {
+                nuevoVehiculo();
+            }
+        }
+
+        //ELIMINAR VEHICULO (debe verificarse que no tenga ordenes asignadas)
+        private bool vehiculoOrden(int idVehiculo)
+        {
+            using (MySqlConnection conector = new MySqlConnection(conexion))
+            {
+                conector.Open();
+                string query = "SELECT COUNT(*) FROM ordenes WHERE fkVehiculo = @id;";
+                using (MySqlCommand comando = new MySqlCommand(query, conector))
+                {
+                    comando.Parameters.AddWithValue("@id", idVehiculo);
+                    int cantidad = Convert.ToInt32(comando.ExecuteScalar());
+                    return cantidad > 0;
+                }
+            }
+        }
+
+        private void eliminarCliente()
+        {
+            try
+            {
+                if (gridVehiculos.SelectedRows.Count > 0)
+                {
+                    //Obtiene el id a eliminar:
+                    int id = Convert.ToInt32(gridVehiculos.SelectedRows[0].Cells["idVehiculo"].Value);
+                    DialogResult c = MessageBox.Show("¿Estas seguro?", "Eliminar vehiculo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (c == DialogResult.Yes)
+                    {
+                        //Validar si el cliente no contiene vehiculos a su nombre
+                        if (vehiculoOrden(id))
+                        {
+                            MessageBox.Show("No se puede eliminar este vehiculo porque tiene ordenes asignadas.", "Operacion Inválida");
+                            return;
+                        }
+                        else
+                        {
+                            using (MySqlConnection conector = new MySqlConnection(conexion))
+                            {
+                                conector.Open();
+                                string query = "DELETE FROM vehiculos WHERE idVehiculo = @id";
+                                using (MySqlCommand comando = new MySqlCommand(query, conector))
+                                {
+                                    comando.Parameters.AddWithValue("@id", id);
+                                    comando.ExecuteNonQuery();
+                                }
+                                MessageBox.Show("Vehiculo eliminado");
+                                mostrarVehiculos();
+                            }
+                        }
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Selecciona el vehiculo a eliminar", "Atención");
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("No se ha podido eliminar: " + e.Message);
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            eliminarCliente();
         }
     }
 }

@@ -27,7 +27,7 @@ namespace tallerMecanico
                 using (MySqlConnection conector = new MySqlConnection(conexion))
                 {
                     conector.Open();
-                    string query = "SELECT fechaEntrada, problemaReportado, estado, v.placas FROM ordenes JOIN vehiculos v ON fkVehiculo = v.idVehiculo;";
+                    string query = "SELECT idOrden, fechaEntrada, problemaReportado, estado, v.placas FROM ordenes JOIN vehiculos v ON fkVehiculo = v.idVehiculo;";
                     MySqlDataAdapter adaptador = new MySqlDataAdapter(query, conector);
                     DataTable ordenes = new DataTable();
                     adaptador.Fill(ordenes);

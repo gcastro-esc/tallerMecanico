@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{440C4BD3-594E-4B9E-85B0-D9591446EA43}|tallerMecanico\\tallerMecanico.csproj|solutionrelative:tallermecanico\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{440C4BD3-594E-4B9E-85B0-D9591446EA43}|tallerMecanico\\tallerMecanico.csproj|c:\\users\\docente\\desktop\\winforms gc\\tallermecanico\\tallermecanico\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{440C4BD3-594E-4B9E-85B0-D9591446EA43}|tallerMecanico\\tallerMecanico.csproj|C:\\Users\\Docente\\Desktop\\winForms GC\\tallerMecanico\\tallermecanico\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{440C4BD3-594E-4B9E-85B0-D9591446EA43}|tallerMecanico\\tallerMecanico.csproj|solutionrelative:tallermecanico\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -64,7 +64,7 @@
               "RelativeDocumentMoniker": "tallerMecanico\\Form4.cs",
               "ToolTip": "C:\\Users\\Docente\\Desktop\\winForms GC\\tallerMecanico\\tallerMecanico\\Form4.cs",
               "RelativeToolTip": "tallerMecanico\\Form4.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAApwB0AAACYAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAApwCEAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-12T13:45:33.214Z",
               "EditorCaption": ""
@@ -91,8 +91,7 @@
               "ToolTip": "C:\\Users\\Docente\\Desktop\\winForms GC\\tallerMecanico\\tallerMecanico\\Form1.cs [Dise\u00F1o]",
               "RelativeToolTip": "tallerMecanico\\Form1.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T19:24:38.725Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-05-09T19:24:38.725Z"
             },
             {
               "$type": "Document",
@@ -116,8 +115,7 @@
               "ToolTip": "C:\\Users\\Docente\\Desktop\\winForms GC\\tallerMecanico\\tallerMecanico\\Form2.cs [Dise\u00F1o]",
               "RelativeToolTip": "tallerMecanico\\Form2.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T17:53:29.789Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-05-09T17:53:29.789Z"
             },
             {
               "$type": "Document",
@@ -128,8 +126,7 @@
               "ToolTip": "C:\\Users\\Docente\\Desktop\\winForms GC\\tallerMecanico\\tallerMecanico\\Form3.cs [Dise\u00F1o]",
               "RelativeToolTip": "tallerMecanico\\Form3.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T15:46:35.333Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-05-09T15:46:35.333Z"
             },
             {
               "$type": "Document",
@@ -141,8 +138,7 @@
               "RelativeToolTip": "tallerMecanico\\Form3.cs",
               "ViewState": "AgIAAE0AAAAAAAAAAAAIwFQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T15:38:48.526Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T15:38:48.526Z"
             }
           ]
         }

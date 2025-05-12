@@ -92,7 +92,7 @@
             comboEstado.Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboEstado.ForeColor = Color.FromArgb(255, 98, 31);
             comboEstado.FormattingEnabled = true;
-            comboEstado.Items.AddRange(new object[] { "PENDIENTE", "EN PROCESO", "TERMINADO" });
+            comboEstado.Items.AddRange(new object[] { "pendiente", "en proceso", "terminado" });
             comboEstado.Location = new Point(230, 213);
             comboEstado.Name = "comboEstado";
             comboEstado.Size = new Size(353, 30);
@@ -237,6 +237,7 @@
             btnModificar.Text = " ";
             btnModificar.TextAlign = ContentAlignment.MiddleLeft;
             btnModificar.UseVisualStyleBackColor = false;
+            btnModificar.Click += btnModificar_Click;
             // 
             // label1
             // 
@@ -267,6 +268,7 @@
             gridOrdenes.Name = "gridOrdenes";
             gridOrdenes.Size = new Size(717, 165);
             gridOrdenes.TabIndex = 6;
+            gridOrdenes.CellClick += gridOrdenes_CellClick;
             // 
             // frmOrdenes
             // 

@@ -11,6 +11,14 @@
       "RelativeMoniker": "D:0:0:{440C4BD3-594E-4B9E-85B0-D9591446EA43}|tallerMecanico\\tallerMecanico.csproj|solutionrelative:tallermecanico\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{440C4BD3-594E-4B9E-85B0-D9591446EA43}|tallerMecanico\\tallerMecanico.csproj|c:\\users\\docente\\desktop\\winforms gc\\tallermecanico\\tallermecanico\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{440C4BD3-594E-4B9E-85B0-D9591446EA43}|tallerMecanico\\tallerMecanico.csproj|solutionrelative:tallermecanico\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{440C4BD3-594E-4B9E-85B0-D9591446EA43}|tallerMecanico\\tallerMecanico.csproj|c:\\users\\docente\\desktop\\winforms gc\\tallermecanico\\tallermecanico\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{440C4BD3-594E-4B9E-85B0-D9591446EA43}|tallerMecanico\\tallerMecanico.csproj|solutionrelative:tallermecanico\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{440C4BD3-594E-4B9E-85B0-D9591446EA43}|tallerMecanico\\tallerMecanico.csproj|c:\\users\\docente\\desktop\\winforms gc\\tallermecanico\\tallermecanico\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{440C4BD3-594E-4B9E-85B0-D9591446EA43}|tallerMecanico\\tallerMecanico.csproj|solutionrelative:tallermecanico\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -26,16 +34,41 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form2.cs",
+              "DocumentMoniker": "C:\\Users\\Docente\\Desktop\\winForms GC\\tallerMecanico\\tallerMecanico\\Form2.cs",
+              "RelativeDocumentMoniker": "tallerMecanico\\Form2.cs",
+              "ToolTip": "C:\\Users\\Docente\\Desktop\\winForms GC\\tallerMecanico\\tallerMecanico\\Form2.cs",
+              "RelativeToolTip": "tallerMecanico\\Form2.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAIwGoAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T15:16:21.611Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form2.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Docente\\Desktop\\winForms GC\\tallerMecanico\\tallerMecanico\\Form2.cs",
+              "RelativeDocumentMoniker": "tallerMecanico\\Form2.cs",
+              "ToolTip": "C:\\Users\\Docente\\Desktop\\winForms GC\\tallerMecanico\\tallerMecanico\\Form2.cs [Dise\u00F1o]",
+              "RelativeToolTip": "tallerMecanico\\Form2.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T15:16:18.041Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Form4.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Docente\\Desktop\\winForms GC\\tallerMecanico\\tallerMecanico\\Form4.cs",
               "RelativeDocumentMoniker": "tallerMecanico\\Form4.cs",
-              "ToolTip": "C:\\Users\\Docente\\Desktop\\winForms GC\\tallerMecanico\\tallerMecanico\\Form4.cs [Dise\u00F1o]*",
-              "RelativeToolTip": "tallerMecanico\\Form4.cs [Dise\u00F1o]*",
+              "ToolTip": "C:\\Users\\Docente\\Desktop\\winForms GC\\tallerMecanico\\tallerMecanico\\Form4.cs [Dise\u00F1o]",
+              "RelativeToolTip": "tallerMecanico\\Form4.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-12T14:02:16.513Z",
               "EditorCaption": " [Dise\u00F1o]"
@@ -46,16 +79,16 @@
               "Title": "Form4.cs",
               "DocumentMoniker": "C:\\Users\\Docente\\Desktop\\winForms GC\\tallerMecanico\\tallerMecanico\\Form4.cs",
               "RelativeDocumentMoniker": "tallerMecanico\\Form4.cs",
-              "ToolTip": "C:\\Users\\Docente\\Desktop\\winForms GC\\tallerMecanico\\tallerMecanico\\Form4.cs*",
-              "RelativeToolTip": "tallerMecanico\\Form4.cs*",
-              "ViewState": "AgIAAKQAAAAAAAAAAAArwLMAAAAcAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Docente\\Desktop\\winForms GC\\tallerMecanico\\tallerMecanico\\Form4.cs",
+              "RelativeToolTip": "tallerMecanico\\Form4.cs",
+              "ViewState": "AgIAALwAAAAAAAAAAAAAAMgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-12T13:45:33.214Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Form3.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Docente\\Desktop\\winForms GC\\tallerMecanico\\tallerMecanico\\Form3.cs",
               "RelativeDocumentMoniker": "tallerMecanico\\Form3.cs",
@@ -67,13 +100,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Form3.cs",
               "DocumentMoniker": "C:\\Users\\Docente\\Desktop\\winForms GC\\tallerMecanico\\tallerMecanico\\Form3.cs",
               "RelativeDocumentMoniker": "tallerMecanico\\Form3.cs",
               "ToolTip": "C:\\Users\\Docente\\Desktop\\winForms GC\\tallerMecanico\\tallerMecanico\\Form3.cs",
               "RelativeToolTip": "tallerMecanico\\Form3.cs",
-              "ViewState": "AgIAAGQAAAAAAAAAAAAUwHsAAABNAAAAAAAAAA==",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAiwHwAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-09T15:38:48.526Z",
               "EditorCaption": ""

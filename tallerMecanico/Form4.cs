@@ -27,7 +27,7 @@ namespace tallerMecanico
                 using (MySqlConnection conector = new MySqlConnection(conexion))
                 {
                     conector.Open();
-                    string query = "SELECT idOrden, fechaEntrada, problemaReportado, estado, v.placas FROM ordenes JOIN vehiculos v ON fkVehiculo = v.idVehiculo;";
+                    string query = "SELECT idOrden, fechaEntrada, problemaReportado, estado, fkVehiculo, v.placas FROM ordenes JOIN vehiculos v ON fkVehiculo = v.idVehiculo;";
                     MySqlDataAdapter adaptador = new MySqlDataAdapter(query, conector);
                     DataTable ordenes = new DataTable();
                     adaptador.Fill(ordenes);
@@ -178,6 +178,72 @@ namespace tallerMecanico
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             eliminarOrden();
+        }
+
+
+        //ACTUALIZAR VEHICULO
+
+        private int ordenSeleccionada = -1;
+
+        private void gridOrdenes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow fila = gridOrdenes.Rows[e.RowIndex];
+                ordenSeleccionada = Convert.ToInt32(fila.Cells["idOrden"].Value);
+                txtPlacas.Text = fila.Cells["problemaReportado"].Value.ToString();
+                dateFecha.Value = Convert.ToDateTime(fila.Cells["fechaEntrada"].Value);
+                comboEstado.Text = fila.Cells["estado"].Value.ToString();
+                comboVehiculo.SelectedValue = Convert.ToInt32(fila.Cells["fkVehiculo"].Value);
+            }
+        }
+
+        private void actualizarOrden()
+        {
+            try
+            {
+                if (ordenSeleccionada != -1)
+                {
+                    int id = Convert.ToInt32(gridOrdenes.SelectedRows[0].Cells["idOrden"].Value);
+                    using (MySqlConnection conector = new MySqlConnection(conexion))
+                    {
+                        conector.Open();
+                        string query = "UPDATE ordenes SET fkVehiculo = @fk, fechaEntrada = @fe, problemaReportado = @pr, estado = @e WHERE idOrden = @id; ";
+                        using (MySqlCommand comando = new MySqlCommand(query, conector))
+                        {
+                            comando.Parameters.AddWithValue("@fk", comboVehiculo.SelectedValue);
+                            comando.Parameters.AddWithValue("@fe", dateFecha.Value);
+                            comando.Parameters.AddWithValue("@pr", txtPlacas.Text);
+                            comando.Parameters.AddWithValue("@e", comboEstado.SelectedItem);
+                            comando.Parameters.AddWithValue("@id", id);
+                            int actualizacion = comando.ExecuteNonQuery();
+                            if (actualizacion > 0)
+                            {
+                                MessageBox.Show("Datos del vehiculo actualizado");
+                                mostrarOrdenes();
+                                comboVehiculo.SelectedIndex = -1;
+                                dateFecha.Value = DateTime.Now;
+                                txtPlacas.Clear();
+                                comboEstado.SelectedIndex = -1;
+                                ordenSeleccionada = -1;
+                            }
+                            else
+                            {
+                                MessageBox.Show("No fue posible actualizar los datos...");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error al actualizar vehiculo: " + e.Message);
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            actualizarOrden();
         }
     }
 }

@@ -112,8 +112,72 @@ namespace tallerMecanico
             nuevaOrden();
         }
 
+        //ELIMINAR VEHICULO (debe verificarse que no tenga ordenes asignadas)
+        private bool ordenDiagnostico(int idVehiculo)
+        {
+            using (MySqlConnection conector = new MySqlConnection(conexion))
+            {
+                conector.Open();
+                string query = "SELECT COUNT(*) FROM diagnosticos WHERE fkOrden = @id;";
+                using (MySqlCommand comando = new MySqlCommand(query, conector))
+                {
+                    comando.Parameters.AddWithValue("@id", idVehiculo);
+                    int cantidad = Convert.ToInt32(comando.ExecuteScalar());
+                    return cantidad > 0;
+                }
+            }
+        }
 
+        //ELIMINAR ORDEN (debe verificarse que no tenga DIAGNOSTICOS asignados)
+        private void eliminarOrden()
+        {
+            try
+            {
+                if (gridOrdenes.SelectedRows.Count > 0)
+                {
+                    //Obtiene el id a eliminar:
+                    int id = Convert.ToInt32(gridOrdenes.SelectedRows[0].Cells["idOrden"].Value);
+                    DialogResult c = MessageBox.Show("¿Estas seguro?", "Eliminar orden", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (c == DialogResult.Yes)
+                    {
+                        //Validar si el cliente no contiene vehiculos a su nombre
+                        if (ordenDiagnostico(id))
+                        {
+                            MessageBox.Show("No se puede eliminar esta orden porque tiene diagnosticos asignados.", "Operacion Inválida");
+                            return;
+                        }
+                        else
+                        {
+                            using (MySqlConnection conector = new MySqlConnection(conexion))
+                            {
+                                conector.Open();
+                                string query = "DELETE FROM ordenes WHERE idOrden = @id";
+                                using (MySqlCommand comando = new MySqlCommand(query, conector))
+                                {
+                                    comando.Parameters.AddWithValue("@id", id);
+                                    comando.ExecuteNonQuery();
+                                }
+                                MessageBox.Show("Vehiculo eliminado");
+                                mostrarOrdenes();
+                            }
+                        }
+                    }
 
+                }
+                else
+                {
+                    MessageBox.Show("Selecciona la orden para eliminar", "Atención");
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("No se ha podido eliminar: " + e.Message);
+            }
+        }
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            eliminarOrden();
+        }
     }
 }

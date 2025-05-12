@@ -36,3 +36,4 @@ C:\Users\Docente\Desktop\winForms GC\tallerMecanico\tallerMecanico\obj\Debug\net
 C:\Users\Docente\Desktop\winForms GC\tallerMecanico\tallerMecanico\obj\Debug\net8.0-windows\tallerMe.70F871B3.Up2Date
 C:\Users\Docente\Desktop\winForms GC\tallerMecanico\tallerMecanico\obj\Debug\net8.0-windows\tallerMecanico.sourcelink.json
 C:\Users\Docente\Desktop\winForms GC\tallerMecanico\tallerMecanico\obj\Debug\net8.0-windows\tallerMecanico.frmVehiculos.resources
+C:\Users\Docente\Desktop\winForms GC\tallerMecanico\tallerMecanico\obj\Debug\net8.0-windows\tallerMecanico.frmOrdenes.resources
